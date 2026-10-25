@@ -2,11 +2,9 @@ import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
 
-# 1. Load the colored image
 image = Image.open('images.jpg').convert("RGB")
 img = np.array(image)
 
-# 2. Apply contrast stretching to each RGB channel
 stretched = np.zeros_like(img)
 
 for c in range(3):
@@ -24,7 +22,6 @@ for c in range(3):
     else:
         stretched[:, :, c] = channel.astype(np.uint8)
 
-# 3. Display original and enhanced images
 plt.figure(figsize=(12, 6))
 
 plt.subplot(1, 2, 1)
